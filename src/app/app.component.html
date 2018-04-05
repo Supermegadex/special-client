@@ -1,5 +1,5 @@
 <h2>Hello</h2>
-<p>{{question}}</p>
+<p *ngIf="!hideQ">{{question}}{{loadingDots}}</p>
 <input [(ngModel)]="name" *ngIf="!nameEntered" name="name" placeholder="Name">
 <input [(ngModel)]="answer" *ngIf="nameEntered" name="answer" placeholder="Answer">
 <button (click)="submitAnswer()" *ngIf="nameEntered">Submit</button>

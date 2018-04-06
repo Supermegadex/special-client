@@ -1,4 +1,6 @@
-<h2>Hello</h2>
+<div class="red shade" [ngClass]="redClass"></div>
+<div class="black shade" [ngClass]="blackClass"></div>
+<h2>Hello<span *ngIf="name">, {{name}}</span>!</h2>
 <p *ngIf="!hideQ">{{question}}{{loadingDots}}</p>
 <input [(ngModel)]="name" *ngIf="!nameEntered" name="name" placeholder="Name">
 <input [(ngModel)]="answer" *ngIf="nameEntered" name="answer" placeholder="Answer">

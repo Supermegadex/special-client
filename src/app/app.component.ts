@@ -14,6 +14,8 @@ export class AppComponent {
   loading = false;
   loadingDots = '';
   nameEntered = false;
+  blackClass = 'hidden';
+  redClass = 'hidden';
   // url = 'https://supermegadex-special.now.sh';
   url = 'http://localhost:3000';
 
@@ -54,14 +56,26 @@ export class AppComponent {
 
   runActions(actions) {
     console.log(actions);
-    for (let action of actions) {
+    for (const action of actions) {
       switch (action) {
-        case 'restart':
+        case 'reboot':
+          this.runResetAction();
           break;
         default:
           break;
       }
     }
+  }
+
+  runResetAction() {
+    this.hideQ = true;
+    this.blackClass = 'up-full';
+    setTimeout(() => {
+      this.blackClass = 'down-full';
+      setTimeout(() => {
+        this.hideQ = false;
+      }, 2000);
+    }, 4500);
   }
 
   getCurrentQuestion() {
@@ -117,6 +131,7 @@ export class AppComponent {
       .then(d => {
         this.loading = false;
         if (d.correct) {
+          this.answer = "";
           this.updateToken(d.token);
           this.runActions(d.actions);
           this.question = d.nextQuestion;

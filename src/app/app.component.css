@@ -1,0 +1,65 @@
+@keyframes up-fifty {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes up-full {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+@keyframes down-full {
+  0% {
+    visibility: visible;
+    opacity: 1.0;
+  }
+  99% {
+    opacity: 0.0;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.up-fifty {
+  visibility: visible;
+  animation: up-fifty 500ms ease-in-out forwards;
+}
+
+.up-full {
+  visibility: visible;
+  animation: up-full 750ms ease-in-out forwards;
+}
+
+.down-full {
+  visibility: visible;
+  animation: down-full 750ms ease-in-out forwards;
+}
+
+.shade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.black {
+  background-color: #000000;
+}
+
+.red {
+  background-color: #cc4872;
+}

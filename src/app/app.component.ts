@@ -16,8 +16,8 @@ export class AppComponent {
   nameEntered = false;
   blackClass = 'hidden';
   redClass = 'hidden';
-  // url = 'https://supermegadex-special.now.sh';
-  url = 'http://localhost:3000';
+  url = 'https://supermegadex-special.now.sh';
+  // url = 'http://localhost:3000';
 
   constructor() {
     const currentToken = localStorage.getItem('token');
